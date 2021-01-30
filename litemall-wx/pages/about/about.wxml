@@ -27,7 +27,7 @@
     </view>
   </view>
 
-  <view class="label">QQ交流群: </view>
+  <!-- <view class="label">QQ交流群: </view>
   <view class="about-item">
     <view class="item-left">
       <text>{{qq}}</text> 
@@ -35,6 +35,6 @@
     <view class="item-right">
       <van-icon class="right-icon" name="friends-o" />
     </view>
-  </view>
+  </view> -->
 
 </view>

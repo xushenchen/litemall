@@ -545,7 +545,7 @@ export const asyncRoutes = [
     path: 'external-link',
     component: Layout,
     redirect: 'noredirect',
-    alwaysShow: true,
+    alwaysShow: false,
     name: 'externalLink',
     meta: {
       title: '外链',

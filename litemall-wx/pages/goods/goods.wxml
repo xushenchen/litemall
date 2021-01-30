@@ -1,5 +1,8 @@
 <view class="container">
   <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item>
+      <image src="{{goods.picUrl}}" background-size="cover"></image>
+    </swiper-item>
     <swiper-item wx:for="{{goods.gallery}}" wx:key="*this">
       <image src="{{item}}" background-size="cover"></image>
     </swiper-item>
@@ -35,7 +38,7 @@
     <view class="c">
       <text class="desc">{{goods.brief}}</text>
       <view class="price">
-        <view class="counterPrice">原价：￥{{goods.counterPrice}}</view>
+        <view wx:if="{{goods.counterPrice > checkedSpecPrice}}" class="counterPrice">原价：￥{{goods.counterPrice}}</view>
         <view class="retailPrice">现价：￥{{checkedSpecPrice}}</view>
       </view>
 

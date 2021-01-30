@@ -1,8 +1,8 @@
 litemall:
   # 开发者应该设置成自己的wx相关信息
   wx:
-    app-id: wx11615af4da78504b
-    app-secret: 2649ea7f869d2532f3569d46a8f06688
+    app-id: wxf78ed12f1e236c82
+    app-secret: f65a05caa2793e4feef65a902b48899b
     mch-id: 111111
     mch-key: xxxxxx
     notify-url: http://www.example.com/wx/order/pay-notify
@@ -85,9 +85,9 @@ litemall:
     active: local
     # 本地对象存储配置信息
     local:
-      storagePath: storage
+      storagePath: /data/xapmallimages
       # 这个地方应该是wx模块的WxStorageController的fetch方法对应的地址
-      address: http://localhost:8080/wx/storage/fetch/
+      address: http://121.4.221.98:8080/wx/storage/fetch/
     # 阿里云对象存储配置信息
     aliyun:
       endpoint: oss-cn-shenzhen.aliyuncs.com

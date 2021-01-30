@@ -6,7 +6,7 @@
       <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
     </navigator>
   </view>
-  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+  <swiper wx:if="{{banner.length > 0}}" class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="id">
       <block wx:if="{{item.link>0}}">
         <navigator url="/pages/goods/goods?id={{item.link}}">
@@ -114,7 +114,7 @@
     <view class="h">
       <view>
         <navigator url="../newGoods/newGoods">
-          <text class="txt">周一周四 · 新品首发</text>
+          <text class="txt">新品首发</text>
         </navigator>
       </view>
     </view>

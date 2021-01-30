@@ -21,8 +21,8 @@ Page({
 
   onShareAppMessage: function() {
     return {
-      title: 'litemall小程序商场',
-      desc: '开源微信小程序商城',
+      title: '鑫奥鹏',
+      desc: '鑫奥鹏微信小程序商城',
       path: '/pages/index/index'
     }
   },
