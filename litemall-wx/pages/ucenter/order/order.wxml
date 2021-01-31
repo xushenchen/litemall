@@ -23,7 +23,7 @@
   </view>
 
   <view class="orders">
-    <navigator url="../orderDetail/orderDetail?id={{item.id}}" class="order" open-type="redirect" wx:for="{{orderList}}" wx:key="id">
+    <navigator url="../orderDetail/orderDetail?id={{item.id}}" class="order" open-type="navigate" wx:for="{{orderList}}" wx:key="id">
       <view class="h">
         <view class="l">订单编号：{{item.orderSn}}</view>
         <view class="r">{{item.orderStatusText}}</view>
@@ -39,7 +39,7 @@
         <view class="status"></view>
       </view>
       <view class="b">
-        <view class="l">实付：￥{{item.actualPrice}}</view>
+        <view class="l cost-content">实付款：<text class="cost-unit">￥</text><text class="cost-cost">{{item.actualPrice}}</text></view>
       </view>
     </navigator>
   </view>

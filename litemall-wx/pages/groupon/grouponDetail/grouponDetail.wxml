@@ -59,7 +59,7 @@
         </view>
       </view>
       <view class="pay-fee">
-        <text class="label">商品实付：</text>
+        <text class="label">商品实付款：</text>
         <text class="txt">￥{{orderInfo.actualPrice}}</text>
       </view>
     </view>

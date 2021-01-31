@@ -117,9 +117,10 @@
 }
 
 .goods-info .retailPrice {
+  display: inline;
   padding-left: 5%;
   font-size: 30rpx;
-  color: #a78845;
+  /* color: red; */
 }
 
 .goods-info .brand {
@@ -483,7 +484,9 @@
   width: 750rpx;
   height: auto;
   overflow: hidden;
-  padding-bottom: 80rpx;
+  /* padding-bottom: 80rpx; */
+  padding-bottom: calc(92rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(92rpx + env(safe-area-inset-bottom));
 }
 
 .related-goods .h {
@@ -569,19 +572,21 @@
   bottom: 0;
   z-index: 10;
   width: 750rpx;
-  height: 100rpx;
+  min-height: 100rpx;
   display: flex;
   background: #fff;
-   /* 设置安全区域 */
-   /* padding-bottom: constant(safe-area-inset-bottom);
-   padding-bottom: env(safe-area-inset-bottom); */
+  border-top: 2rpx solid rgb(233, 227, 227);
+  padding-top: 10rpx;
+  /* 设置安全区域 */
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .bottom-btn .l {
   float: left;
-  height: 100rpx;
+  height: 80rpx;
   width: 162rpx;
-  border: 1px solid #f4f4f4;
+  /* border: 1px solid #f4f4f4; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -636,24 +641,36 @@
 }
 
 .bottom-btn .c {
-  float: left;
-  background: #b4282d;
-  height: 100rpx;
-  line-height: 96rpx;
+  /* float: left; */
+  /* background: #b4282d; */
+  height: 80rpx;
+  /* line-height: 96rpx; */
   flex: 1;
-  text-align: center;
+  /* text-align: center; */
+  /* width: 200rpx; */
+  margin: 0 30rpx 0 15rpx;
   color: #fff;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bottom-btn .r {
-  border: 1px solid #f48f18;
-  background: #f48f18;
-  float: left;
-  height: 100rpx;
-  line-height: 96rpx;
+  /* border: 1px solid #f48f18; */
+  /* background: #f48f18; */
+  /* float: left; */
+  height: 80rpx;
+  /* width: 200rpx; */
+  /* line-height: 96rpx; */
+  margin: 0 15rpx;
   flex: 1;
-  text-align: center;
+  /* text-align: center; */
   color: #fff;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bottom-btn .n {
@@ -665,6 +682,7 @@
   text-align: center;
   color: rgb(37, 36, 36);
 }
+
 @import "../../lib/wxParse/wxParse.wxss";
 
 .attr-pop-box {

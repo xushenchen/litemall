@@ -1,6 +1,8 @@
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
 
+const app = getApp()
+
 Page({
   data: {
     categoryList: [],
@@ -9,7 +11,8 @@ Page({
     scrollLeft: 0,
     scrollTop: 0,
     goodsCount: 0,
-    scrollHeight: 0
+    scrollHeight: 0,
+    bbreact: {}
   },
   onLoad: function(options) {
     this.getCatalog();
@@ -33,6 +36,11 @@ Page({
         currentSubCategoryList: res.data.currentSubCategory
       });
       wx.hideLoading();
+    }).catch(err => {
+      wx.hideLoading(); // 失败了也关闭提示
+      wx.showToast({
+        title: '加载分类失败',
+      })
     });
     util.request(api.GoodsCount).then(function(res) {
       that.setData({
@@ -55,6 +63,12 @@ Page({
   },
   onReady: function() {
     // 页面渲染完成
+    const bbreact = app.globalData.menuBoundingRect;
+    const compRect = {...bbreact, leftNullWidth: app.globalData.windowInfo.width - (app.globalData.windowInfo.width - bbreact.left) }
+    this.setData({
+      bbreact: compRect
+    })
+    console.log('胶囊的位置:',this.bbreact,compRect, app.globalData.windowInfo)
   },
   onShow: function() {
     // 页面显示

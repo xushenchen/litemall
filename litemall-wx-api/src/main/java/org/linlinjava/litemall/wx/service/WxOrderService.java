@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import static org.linlinjava.litemall.wx.util.WxResponseCode.*;
 
@@ -193,7 +194,9 @@ public class WxOrderService {
         orderVo.put("message", order.getMessage());
         orderVo.put("addTime", order.getAddTime());
         orderVo.put("consignee", order.getConsignee());
-        orderVo.put("mobile", order.getMobile());
+        // 手机号隐私保护
+        String tel = order.getMobile().replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1 **** $2");
+        orderVo.put("mobile", tel);
         orderVo.put("address", order.getAddress());
         orderVo.put("goodsPrice", order.getGoodsPrice());
         orderVo.put("couponPrice", order.getCouponPrice());
@@ -205,6 +208,7 @@ public class WxOrderService {
         orderVo.put("expCode", order.getShipChannel());
         orderVo.put("expName", expressService.getVendorName(order.getShipChannel()));
         orderVo.put("expNo", order.getShipSn());
+        orderVo.put("userDiscountPrice", order.getUserDiscountPrice());
 
         List<LitemallOrderGoods> orderGoodsList = orderGoodsService.queryByOid(order.getId());
 
@@ -311,6 +315,12 @@ public class WxOrderService {
             return ResponseUtil.badArgument();
         }
 
+        LitemallUser orderUser = userService.findById(userId); // 查找当前下单的用户
+        if (orderUser == null || orderUser.getStatus() != 0) {
+            return  ResponseUtil.fail(); // 用户账户异常
+        }
+        BigDecimal userDiscount = orderUser.getUserOrderDiscount() != null ? orderUser.getUserOrderDiscount() : new BigDecimal(0); // 用户享有的折扣
+
         // 团购优惠
         BigDecimal grouponPrice = new BigDecimal(0);
         LitemallGrouponRules grouponRules = grouponRulesService.findById(grouponRulesId);
@@ -361,9 +371,19 @@ public class WxOrderService {
 
         // 可以使用的其他钱，例如用户积分
         BigDecimal integralPrice = new BigDecimal(0);
+        // 计算代理商的折扣
+        userDiscount = userDiscount.divide(new BigDecimal(10));
+        userDiscount = userDiscount.doubleValue() > 0 && userDiscount.doubleValue() < 1 ? userDiscount: new BigDecimal(1);
+        // 用户折扣下来的价格
+        BigDecimal userDiscountPrice = checkedGoodsPrice.subtract(checkedGoodsPrice.multiply(userDiscount));
 
         // 订单费用
-        BigDecimal orderTotalPrice = checkedGoodsPrice.add(freightPrice).subtract(couponPrice).max(new BigDecimal(0));
+        BigDecimal orderTotalPrice = checkedGoodsPrice
+                .subtract(userDiscountPrice)//这里使用计算好的折扣的价格 .multiply(userDiscount) // 要先乘用户自带的折扣
+                .add(freightPrice) // 运费
+                .subtract(couponPrice) // 优惠券
+                .max(new BigDecimal(0));
+
         // 最终支付费用
         BigDecimal actualPrice = orderTotalPrice.subtract(integralPrice);
 
@@ -385,6 +405,7 @@ public class WxOrderService {
         order.setIntegralPrice(integralPrice);
         order.setOrderPrice(orderTotalPrice);
         order.setActualPrice(actualPrice);
+        order.setUserDiscountPrice(userDiscountPrice);
 
         // 有团购
         if (grouponRules != null) {

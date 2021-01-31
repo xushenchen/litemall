@@ -45,6 +45,8 @@ public class WxCartController {
     private LitemallCouponUserService couponUserService;
     @Autowired
     private CouponVerifyService couponVerifyService;
+    @Autowired
+    private LitemallUserService litemallUserService;
 
     /**
      * 用户购物车信息
@@ -433,6 +435,11 @@ public class WxCartController {
             }
         }
 
+        LitemallUser buyUser = litemallUserService.findById(userId);
+        if (buyUser == null || buyUser.getStatus() != 0) {
+            return  ResponseUtil.fail(); // 用户状态不正确，无法进行下单
+        }
+
         // 团购优惠
         BigDecimal grouponPrice = new BigDecimal(0.00);
         LitemallGrouponRules grouponRules = grouponRulesService.findById(grouponRulesId);
@@ -519,8 +526,16 @@ public class WxCartController {
         // 可以使用的其他钱，例如用户积分
         BigDecimal integralPrice = new BigDecimal(0.00);
 
+        // 稍微计算一下会员用户（代理商）的折扣
+        BigDecimal userDiscount = buyUser.getUserOrderDiscount() != null ? buyUser.getUserOrderDiscount().divide(new BigDecimal(10)) : new BigDecimal(0);
+        userDiscount = userDiscount.doubleValue() > 0 && userDiscount.doubleValue() < 1 ? userDiscount: new BigDecimal(1);
+
         // 订单费用
-        BigDecimal orderTotalPrice = checkedGoodsPrice.add(freightPrice).subtract(couponPrice).max(new BigDecimal(0.00));
+        BigDecimal orderTotalPrice = checkedGoodsPrice
+                .multiply(userDiscount) // 用户折扣
+                .add(freightPrice) // 加运费
+                .subtract(couponPrice) // 减折扣
+                .max(new BigDecimal(0.00));
 
         BigDecimal actualPrice = orderTotalPrice.subtract(integralPrice);
 

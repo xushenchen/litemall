@@ -22,7 +22,7 @@ Page({
   onShareAppMessage: function() {
     return {
       title: '鑫奥鹏',
-      desc: '鑫奥鹏微信小程序商城',
+      desc: '鑫奥鹏商城',
       path: '/pages/index/index'
     }
   },

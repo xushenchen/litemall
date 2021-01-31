@@ -155,6 +155,13 @@ Page({
 
         const orderId = res.data.orderId;
         const grouponLinkId = res.data.grouponLinkId;
+
+        // 直接跳转到订单支付状态的界面，提示需要线下付款
+        wx.redirectTo({
+          url: '/pages/payResult/payResult?status=2&orderId=' + orderId
+        });
+        return; // 走线下付款，不需要调用微信支付的接口了
+
         util.request(api.OrderPrepay, {
           orderId: orderId
         }, 'POST').then(function(res) {

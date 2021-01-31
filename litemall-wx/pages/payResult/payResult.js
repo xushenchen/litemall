@@ -5,13 +5,15 @@ var app = getApp();
 Page({
   data: {
     status: false,
+    statusCode: 0,
     orderId: 0
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
       orderId: options.orderId,
-      status: options.status === '1' ? true : false
+      status: options.status === '1' ? true : false,
+      statusCode: options.status
     })
   },
   onReady: function() {

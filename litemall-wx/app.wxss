@@ -17,3 +17,34 @@ view, text {
   font-size: 29rpx;
   color: #333;
 }
+
+/* 金额容器 下的单位 */
+.cost-content .cost-unit{
+  font-size: 22rpx;
+}
+
+/* 金额容器 下的金额 */
+.const-content .cost {
+
+}
+
+/* 金额容器 整数部分 */
+.const-content .cost-int {
+
+}
+/* 金额 分部分 */
+.cost-content .cost-cent {
+
+}
+/* 主题红色 */
+.main-red-color {
+  color: #e1251b;
+}
+/* 主红色背景 */
+.main-red-bg-img {
+  background-image: linear-gradient(to right, #e1251b 0%, #f54330 100%);
+}
+/* 主黄色背景 */
+.main-yellow-bg-img {
+  background-image: linear-gradient(to right, #f7b439 0%, #fac564 100%);
+}

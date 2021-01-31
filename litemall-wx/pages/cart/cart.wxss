@@ -109,6 +109,7 @@ page {
   width: 100%;
   height: auto;
   overflow: hidden;
+  margin-top: 3rpx;
 }
 
 .cart-view .list {
@@ -410,7 +411,7 @@ page {
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
   /* background-image: linear-gradient(to right, #ff7701 100%); */
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
+  background-image: linear-gradient(to right, #f7b439 0%, #fac564 100%);
 }
 
 .action_btn_area .checkout {
@@ -429,7 +430,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  background-image: linear-gradient(to right, #e1251b 0%, #f54330 100%);
 }
 
 .action_btn_area .delete {
@@ -443,13 +444,15 @@ page {
   text-align: center;
   padding-left: -5rpx;
   font-size: 25rpx;
-  color: #f4f4f4;
+  /* color: #f4f4f4; */
+  color: red;
   border-top-left-radius: 50rpx;
   border-bottom-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  background-image: linear-gradient(to right, #fff 0%, #fff 100%);
+  border: 2rpx solid rgb(207, 207, 207);
 }
 
 .action_btn_area .sure {
@@ -469,7 +472,7 @@ page {
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #ab956d 0%, #ab956d 100%);
+  background-image: linear-gradient(to right, #f7b439 0%, #fac564 100%);
   /* background-image: linear-gradient(to right, #ff7701 0%, #fe4800 100%); */
 }
 

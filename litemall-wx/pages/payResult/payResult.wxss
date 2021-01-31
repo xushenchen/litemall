@@ -29,7 +29,7 @@ page {
 .pay-result .btn {
   text-align: center;
   height: 80rpx;
-  margin: 0 20rpx;
+  margin: 20rpx 20rpx;
   width: 200rpx;
   line-height: 78rpx;
   border: 1px solid #868686;
@@ -45,6 +45,12 @@ page {
 .pay-result .error .tips {
   color: #7f7f7f;
   margin-bottom: 70rpx;
+}
+
+.pay-result .success .tips {
+  color: #7f7f7f;
+  margin-bottom: 40rpx;
+  text-align: center;
 }
 
 .pay-result .error .tips .p {

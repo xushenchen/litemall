@@ -28,6 +28,21 @@ App({
         }
       })
     })
+  
+    // 获取胶囊位置
+    let menuButtonObject = wx.getMenuButtonBoundingClientRect();
+    // console.log('胶囊位置：', menuButtonObject)
+    this.globalData.menuBoundingRect = menuButtonObject
+    wx.getSystemInfo({
+      success: res => {
+        console.log('获取设备信息成功。即将设置window变量', res)
+        this.globalData.windowInfo = { height: res.windowHeight, width: res.windowWidth };
+      },
+      fail(err) {
+        console.log(err);
+      }
+    })
+
   },
   onShow: function(options) {
     user.checkLogin().then(res => {
@@ -37,6 +52,6 @@ App({
     });
   },
   globalData: {
-    hasLogin: false
+    hasLogin: false,
   }
 })

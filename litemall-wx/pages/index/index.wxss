@@ -520,7 +520,7 @@
   width: 690rpx;
   height: 56rpx;
   background: #ededed;
-  border-radius: 8rpx;
+  border-radius: 5000rpx;
   display: flex;
   align-items: center;
   justify-content: center;

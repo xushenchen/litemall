@@ -11,7 +11,7 @@ page {
 }
 
 .search {
-  height: 88rpx;
+  /* height: 88rpx; */
   width: 100%;
   padding: 0 30rpx;
   background: #fff;
@@ -23,10 +23,11 @@ page {
   width: 690rpx;
   height: 56rpx;
   background: #ededed;
-  border-radius: 8rpx;
+  border-radius: 500rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 30rpx;
+  /* justify-content: center; */
 }
 
 .search .van-icon-search {
@@ -47,10 +48,11 @@ page {
   background: #fff;
   display: flex;
   border-top: 1px solid #fafafa;
+  /* margin-top: 10rpx; */
 }
 
 .catalog .nav {
-  width: 162rpx;
+  width: 172rpx;
   height: 100%;
 }
 
@@ -60,14 +62,27 @@ page {
   width: 162rpx;
   height: 90rpx;
   color: #333;
-  font-size: 28rpx;
+  font-size: 30rpx;
   border-left: 6rpx solid #fff;
 }
 
 .catalog .nav .item.active {
-  color: #ab956d;
-  font-size: 36rpx;
-  border-left: 6rpx solid #ab956d;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30rpx;
+  /* border-left: 6rpx solid #e1251b; */
+}
+.catalog .nav .item.active::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 6rpx;
+  height: 30rpx;
+  background-color: #e1251b;
+  vertical-align:middle;
+  margin-right: 10rpx;
+  /* top: 45rpx; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .catalog .cate {
@@ -131,6 +146,7 @@ page {
   height: auto;
   width: 100%;
   overflow: hidden;
+  border-radius: 18rpx;
 }
 
 .catalog .bd .item {

@@ -13,9 +13,9 @@ page {
 
 .item {
   padding-left: 31.25rpx;
-  height: 42.5rpx;
-  padding-bottom: 12.5rpx;
-  line-height: 30rpx;
+  /* height: 42.5rpx; */
+  padding-bottom: 20.5rpx;
+  /* line-height: 30rpx; */
   font-size: 30rpx;
   color: #666;
 }
@@ -42,7 +42,10 @@ page {
 .item-c .r .btn {
   float: right;
 }
-
+.item-c .cost-unit {
+  color: #b4282d;
+  font-size: 22rpx;
+}
 .item-c .cost {
   color: #b4282d;
 }
@@ -214,19 +217,20 @@ page {
 .order-bottom .address .b {
   height: 35rpx;
   line-height: 35rpx;
-  font-size: 30rpx;
+  font-size: 25rpx;
+  color: #666;
 }
 
 .order-bottom .total {
-  height: 130rpx;
+  /* height: 130rpx; */
   padding-top: 20rpx;
   border-bottom: 1px solid #f4f4f4;
 }
 
 .order-bottom .total .t {
-  height: 30rpx;
-  line-height: 30rpx;
-  margin-bottom: 7.5rpx;
+  /* height: 30rpx; */
+  /* line-height: 30rpx; */
+  margin-bottom: 15.5rpx;
   display: flex;
 }
 
@@ -247,20 +251,27 @@ page {
 }
 
 .order-bottom .pay-fee {
-  height: 81rpx;
+  /* height: 81rpx; */
   line-height: 81rpx;
+  text-align: right;
+  padding: 15rpx 40rpx 15rpx 0rpx;
 }
 
 .order-bottom .pay-fee .label {
   display: inline-block;
   width: 140rpx;
-  color: #b4282d;
+  /* color: #b4282d; */
 }
 
 .order-bottom .pay-fee .txt {
   display: inline-block;
-  width: 140rpx;
+  /* width: 140rpx; */
   color: #b4282d;
+}
+
+.order-bottom .pay-fee .cost-unit {
+  color: #b4282d;
+  font-size: 20rpx;
 }
 
 .order-express {

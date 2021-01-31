@@ -1,13 +1,18 @@
 <view class="container">
-  <view class="search">
-    <navigator url="/pages/search/search" class="input">
-      <van-icon name="search"/>
-      <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
-    </navigator>
+  <view style="background-color:#ffffff;padding-bottom: 20rpx;">
+    <!-- 动态div， 占用到微信小胶囊上面的空间 -->
+    <view style="width:100%; height:{{bbreact.top}}px;"></view>
+    <view class="search" style="width: {{bbreact.leftNullWidth}}px;height:{{bbreact.height}}px">
+      <navigator url="/pages/search/search" class="input">
+        <van-icon name="search" />
+        <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
+      </navigator>
+    </view>
   </view>
   <view class="catalog">
     <scroll-view class="nav" scroll-y="true">
-      <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
+      <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{categoryList}}" wx:key="id"
+        data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
     </scroll-view>
     <scroll-view class="cate" scroll-y="true">
       <navigator url="url" class="banner">
@@ -20,7 +25,8 @@
         <text class="line"></text>
       </view>
       <view class="bd">
-        <navigator url="/pages/category/category?id={{item.id}}" class="item {{(index+1) % 3 == 0 ? 'last' : ''}}" wx:key="id" wx:for="{{currentSubCategoryList}}">
+        <navigator url="/pages/category/category?id={{item.id}}" class="item {{(index+1) % 3 == 0 ? 'last' : ''}}"
+          wx:key="id" wx:for="{{currentSubCategoryList}}">
           <image class="icon" src="{{item.picUrl}}"></image>
           <text class="txt">{{item.name}}</text>
         </navigator>

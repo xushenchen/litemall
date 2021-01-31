@@ -4,12 +4,13 @@
     <view class="item">订单编号：{{orderInfo.orderSn}}</view>
     <view class="item">订单留言：{{orderInfo.message}}</view>
     <view class="item-c">
-      <view class="l">实付：
-        <text class="cost">￥{{orderInfo.actualPrice}}</text>
+      <view class="l">实付款：
+        <text class="cost-unit">￥</text><text class="cost">{{orderInfo.actualPrice}}</text>
       </view>
       <view class="r">
         <view class="btn active" bindtap="cancelOrder" wx:if="{{handleOption.cancel}}">取消订单</view>
-        <view class="btn active" bindtap="payOrder" wx:if="{{handleOption.pay}}">去付款</view>
+        <!-- 走线下付款，不需要在线上付款 -->
+        <!-- <view class="btn active" bindtap="payOrder" wx:if="{{handleOption.pay}}">去付款</view> -->
         <view class="btn active" bindtap="confirmOrder" wx:if="{{handleOption.confirm}}">确认收货</view>
         <view class="btn active" bindtap="deleteOrder" wx:if="{{handleOption.delete}}">删除订单</view>
         <view class="btn active" bindtap="refundOrder" wx:if="{{handleOption.refund}}">申请退款</view>
@@ -55,21 +56,25 @@
       </view>
       <view class="total">
         <view class="t">
-          <text class="label">商品合计：</text>
-          <text class="txt">￥{{orderInfo.goodsPrice}}</text>
-        </view>
-        <view class="t">
           <text class="label">运费：</text>
           <text class="txt">￥{{orderInfo.freightPrice}}</text>
         </view>
         <view class="t">
           <text class="label">优惠：</text>
-          <text class="txt">￥-{{orderInfo.couponPrice}}</text>
+          <text class="txt">￥{{(orderInfo.couponPrice||0) * -1}}</text>
+        </view>
+        <view class="t">
+          <text class="label">会员折扣：</text>
+          <text class="txt">￥{{(orderInfo.userDiscountPrice || 0) * -1}}</text>
+        </view>
+        <view class="t">
+          <text class="label">商品合计：</text>
+          <text class="txt">￥{{orderInfo.goodsPrice}}</text>
         </view>
       </view>
       <view class="pay-fee">
-        <text class="label">实付：</text>
-        <text class="txt">￥{{orderInfo.actualPrice}}</text>
+        <text class="label">实付款：</text>
+        <text class="cost-unit">￥</text><text class="txt">{{orderInfo.actualPrice}}</text>
       </view>
     </view>
   </view>

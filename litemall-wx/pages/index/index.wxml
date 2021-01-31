@@ -123,7 +123,7 @@
         <navigator url="../goods/goods?id={{item.id}}">
           <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
           <text class="name">{{item.name}}</text>
-          <text class="price">￥{{item.retailPrice}}</text>
+          <text class="price cost-content" style="color:red;"><text class="cost-unit" style="color:red;">￥</text>{{item.retailPrice}}</text>
         </navigator>
       </view>
     </view>
