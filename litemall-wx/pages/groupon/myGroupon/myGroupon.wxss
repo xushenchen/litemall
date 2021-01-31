@@ -8,7 +8,7 @@ page {
   width: 100%;
   background: #fff;
   height: 84rpx;
-  border-bottom: 1px solid #a78845;
+  border-bottom: 1rpx solid rgb(214, 214, 214);
 }
 
 .orders-switch .item {
@@ -30,8 +30,10 @@ page {
 }
 
 .orders-switch .item.active .txt {
-  color: #a78845;
-  border-bottom: 4rpx solid #a78845;
+  /* color: #a78845; */
+  color: #000;
+  font-weight: 500;
+  border-bottom: 4rpx solid #e1251b;
 }
 
 .no-order {

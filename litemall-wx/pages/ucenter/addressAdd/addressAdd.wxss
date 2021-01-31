@@ -160,3 +160,25 @@ page {
   left: 0;
   z-index: 8;
 }
+
+.btns-content {
+
+}
+.btns-content .cannel {
+  width: 90%;
+  border-radius: 500rpx;
+  height: 80rpx;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+.btns-content .save {
+  width: 90%;
+  border-radius: 500rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  height: 80rpx;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}

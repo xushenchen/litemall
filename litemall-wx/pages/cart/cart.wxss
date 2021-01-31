@@ -389,8 +389,9 @@ page {
   align-items: center;
   right: 0;
   top: 0;
-  width: 380rpx;
+  /* width: 380rpx; */
   height: 100rpx;
+  margin-right: 30rpx;
 }
 
 .action_btn_area .edit {
@@ -420,7 +421,7 @@ page {
   line-height: 82rpx;
   padding: 0;
   margin: 0;
-  margin-left: 5rpx;
+  margin-left: 20rpx;
   /* padding-right: 25rpx; */
   font-size: 25rpx;
   color: #f4f4f4;

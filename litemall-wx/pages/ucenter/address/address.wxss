@@ -32,8 +32,9 @@ page {
 .address-list .name {
   width: 125rpx;
   height: 43rpx;
-  font-size: 29rpx;
-  color: #333;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #000;
   margin-bottom: 5.2rpx;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,6 +50,9 @@ page {
   color: #b4282d;
   border: 1rpx solid #b4282d;
   visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .address-list .c {
@@ -59,10 +63,11 @@ page {
 
 .address-list .mobile {
   height: 29rpx;
-  font-size: 29rpx;
+  font-size: 28rpx;
+  font-weight: 700;
   line-height: 29rpx;
   overflow: hidden;
-  color: #333;
+  color: #000;
   margin-bottom: 6.25rpx;
 }
 
@@ -105,14 +110,14 @@ page {
   margin-left: 5%;
   text-align: center;
   /* padding-left: -5rpx; */
-  font-size: 25rpx;
+  font-size: 30rpx;
   color: #f4f4f4;
   border-top-left-radius: 50rpx;
   border-bottom-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
   letter-spacing: 3rpx;
-  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+  background-image: linear-gradient(to right, #e1251b 0%, #f54330 100%);
   /* 设置安全区域 */
   margin-bottom: constant(safe-area-inset-bottom);
   margin-bottom: env(safe-area-inset-bottom);
