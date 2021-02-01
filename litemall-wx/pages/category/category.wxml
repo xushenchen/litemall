@@ -19,6 +19,7 @@
           <text class="name">{{iitem.name}}</text>
           <text class="price cost-content"><text class="cost-unit" style="color:red;">￥</text>{{iitem.retailPrice}}</text>
         </navigator>
+        <view style="width:100%;text-align: center;margin-top: 10rpx;color:#999;">{{ isLoading ? '正在加载...' : isLoadComp && page > 1 ? '没有更多数据了' : '' }}</view>
       </view>
     </view>
   </scroll-view>

@@ -171,6 +171,9 @@ page {
   display: flex;
   align-items:center;
   justify-content:center;
+  background-color: white;
+  border: 1rpx solid #999;
+  color: #000;
 }
 .btns-content .save {
   width: 90%;
@@ -181,4 +184,5 @@ page {
   display: flex;
   align-items:center;
   justify-content:center;
+  background-image: linear-gradient(to right, #e1251b 0%, #f54330 100%);
 }

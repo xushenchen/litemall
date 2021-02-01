@@ -133,7 +133,8 @@
     <view class="h">
       <view>
         <navigator url="../hotGoods/hotGoods">
-          <text class="txt">人气推荐</text>
+          <text class="txt" style="color:#e1251b;">人气推荐</text>
+          <van-icon name="fire-o" color="#e1251b" />
         </navigator>
       </view>
     </view>

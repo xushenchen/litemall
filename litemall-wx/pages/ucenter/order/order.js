@@ -44,11 +44,11 @@ Page({
       });
       this.getOrderList();
     } else {
-      wx.showToast({
-        title: '没有更多订单了',
-        icon: 'none',
-        duration: 2000
-      });
+      // wx.showToast({
+      //   title: '没有更多订单了',
+      //   icon: 'none',
+      //   duration: 2000
+      // });
       return false;
     }
   },

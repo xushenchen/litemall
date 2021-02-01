@@ -583,9 +583,10 @@
 }
 
 .bottom-btn .l {
-  float: left;
-  height: 80rpx;
-  width: 162rpx;
+  /* float: left;
+  height: 80rpx; */
+  width: 102rpx;
+  margin-right: 20rpx;
   /* border: 1px solid #f4f4f4; */
   display: flex;
   align-items: center;
@@ -596,13 +597,16 @@
   border-right: none;
   border-left: none;
   text-align: center;
-  width: 90rpx;
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-btn .l.l-collect .icon {
-  position: absolute;
+  /* position: absolute;
   top: 28rpx;
-  left: 20rpx;
+  left: 20rpx; */
   font-size: 44rpx;
 }
 
@@ -625,7 +629,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: #b4282d;
+  background: #e1251b;
   text-align: center;
   font-size: 18rpx;
   color: #fff;
@@ -703,7 +707,9 @@
   background: #fff;
   position: fixed;
   z-index: 9;
-  bottom: 100rpx;
+  bottom: calc(constant(safe-area-inset-bottom) + 91rpx);
+  bottom: calc(env(safe-area-inset-bottom) + 91rpx);
+  /* bottom: 100rpx; */
 }
 
 .attr-pop .close {

@@ -10,8 +10,10 @@ Page({
     scrollLeft: 0,
     scrollTop: 0,
     scrollHeight: 0,
-    page: 1,
-    limit: 10
+    page: 1,//当前加载页面下标
+    limit: 10,
+    isLoading: false, // 是否正在加载中
+    isLoadComp: false, // 是否已经全部加载完成
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -44,7 +46,10 @@ Page({
         if (res.errno == 0) {
           that.setData({
             navList: res.data.brotherCategory,
-            currentCategory: res.data.currentCategory
+            currentCategory: res.data.currentCategory,
+            page: 1,
+            isLoading: false,
+            isLoadComp: false,
           });
 
           wx.setNavigationBarTitle({
@@ -90,18 +95,44 @@ Page({
     // 页面隐藏
   },
   getGoodsList: function() {
+    if (this.data.isLoading) {
+      console.log('数据正在加载，不用再次加载');
+      return;
+    } else if (this.data.isLoadComp) {
+      console.log('当前页面数据加载完成，无需再次加载')
+      return
+    }
     var that = this;
-
+    this.setData({
+      isLoading: true
+    })
     util.request(api.GoodsList, {
         categoryId: that.data.id,
         page: that.data.page,
         limit: that.data.limit
       })
-      .then(function(res) {
+      .then(res => {
         that.setData({
-          goodsList: res.data.list,
+          goodsList: that.data.page <= 1 ? res.data.list : [...that.data.goodsList,...res.data.list],//res.data.list
+          isLoading: false,
+          isLoadComp: that.data.page >= res.data.pages
         });
+      }).catch(err => {
+        this.setData({
+          isLoading: false
+        })
       });
+  },
+  onReachBottom: function () {
+    if (!this.data.isLoading) {
+      if (!this.data.isLoadComp) {
+        const newPage = this.data.page+1;
+        this.setData({
+          page: newPage
+        });
+        this.getGoodsList()
+      }
+    }
   },
   onUnload: function() {
     // 页面关闭

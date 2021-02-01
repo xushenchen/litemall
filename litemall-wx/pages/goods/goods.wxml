@@ -190,7 +190,7 @@
 <!-- 底部按钮 -->
 <view class="bottom-btn">
   <view class="l l-collect" bindtap="addCollectOrNot" wx:if="{{!isGroupon}}">
-    <van-icon class="icon" name="star" color="#ab956d" wx:if="{{collect}}"/>
+    <van-icon class="icon" name="star" color="#e1251b" wx:if="{{collect}}"/>
     <van-icon class="icon" name="star-o" wx:else/>
   </view>
   <view class="l l-cart" wx:if="{{!isGroupon}}">

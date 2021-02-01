@@ -58,9 +58,10 @@ page {
 
 .catalog .nav .item {
   text-align: center;
-  line-height: 90rpx;
+  /* line-height: 90rpx; */
   width: 162rpx;
-  height: 90rpx;
+  /* height: 90rpx; */
+  padding: 25rpx 0;
   color: #333;
   font-size: 30rpx;
   border-left: 6rpx solid #fff;
