@@ -12,7 +12,8 @@ page {
 }
 
 .profile-info {
-  background-color: #ab956d;
+  background-image: linear-gradient(to bottom, #e1251b 0%, #ff6b46 100%);
+  /* background-color: #ab956d; */
   color: #f4f4f4;
   display: flex;
   align-items: center;

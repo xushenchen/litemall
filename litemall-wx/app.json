@@ -53,7 +53,7 @@
   "tabBar": {
     "backgroundColor": "#fafafa",
     "borderStyle": "white",
-    "selectedColor": "#AB956D",
+    "selectedColor": "#E1251B",
     "color": "#666",
     "list": [
       {
@@ -100,7 +100,8 @@
     "van-tag": "./lib/vant-weapp/tag/index",
     "van-icon": "./lib/vant-weapp/icon/index",
     "van-checkbox": "./lib/vant-weapp/checkbox/index",
-    "van-steps": "./lib/vant-weapp/steps/index"
+    "van-steps": "./lib/vant-weapp/steps/index",
+    "van-submit-bar": "./lib/vant-weapp/submit-bar/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -586,7 +586,8 @@
   /* float: left;
   height: 80rpx; */
   width: 102rpx;
-  margin-right: 20rpx;
+  /* margin-right: 20rpx; */
+  /* margin-left: 10rpx; */
   /* border: 1px solid #f4f4f4; */
   display: flex;
   align-items: center;
@@ -597,10 +598,11 @@
   border-right: none;
   border-left: none;
   text-align: center;
-  width: 120rpx;
+  width: 95rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10rpx;
 }
 
 .bottom-btn .l.l-collect .icon {

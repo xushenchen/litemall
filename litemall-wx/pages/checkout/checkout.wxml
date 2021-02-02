@@ -18,7 +18,7 @@
         还没有收货地址，去添加
       </view>
       <view class="r">
-        <van-icon name="arrow" />      
+        <van-icon name="arrow" />
       </view>
     </view>
   </view>
@@ -36,9 +36,9 @@
       <view class="l" wx:else>
         <text class="name">优惠券</text>
         <text class="txt">-￥{{couponPrice}}元</text>
-      </view>      
+      </view>
       <view class="r">
-        <van-icon name="arrow" />      
+        <van-icon name="arrow" />
       </view>
     </view>
   </view>
@@ -90,8 +90,9 @@
     </view>
   </view>
 
-  <view class="order-total">
+  <!-- <view class="order-total">
     <view class="l">实付款：￥{{actualPrice}}</view>
     <view class="r" bindtap="submitOrder">去付款</view>
-  </view>
+  </view> -->
+  <van-submit-bar price="{{ actualPrice }}" button-text="去付款" bind:submit="onSubmit" />
 </view>
