@@ -27,6 +27,10 @@ Page({
     }
   },
 
+  noticeTapHandle(event) {
+    // 应该要跳转到对应的详情页面
+  },
+
   onPullDownRefresh() {
     wx.showNavigationBarLoading() //在标题栏中显示加载
     this.getIndexData();

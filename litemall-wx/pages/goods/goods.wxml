@@ -12,7 +12,7 @@
     <view class='goods_name_left'>{{goods.name}}</view>
     <view hidden="{{!canShare}}" class="goods_name_right" bindtap="shareFriendOrCircle">分享</view>
   </view>
-  <view class="share-pop-box" hidden="{{!openShare}}">
+  <!-- <view class="share-pop-box" hidden="{{!openShare}}">
     <view class="share-pop">
       <view class="close" bindtap="closeShare">
         <van-icon class="icon" name="cross" />      
@@ -32,7 +32,15 @@
         </button>
       </view>
     </view>
-  </view>
+  </view> -->
+
+  <van-share-sheet
+    show="{{ openShare }}"
+    title="商品分享"
+    options="{{ shareOptions }}"
+    bind:select="onBottomSelect"
+    bind:close="onBottomClose"
+  />
 
   <view class="goods-info">
     <view class="c">
@@ -98,6 +106,9 @@
   <view class="detail">
     <import src="/lib/wxParse/wxParse.wxml" />
     <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+  </view>
+  <view style="background-color:#fff;" wx:if="{{ !goods || !goods.detail || !goods.detail.length || goods.detail.length <= 0 }}">
+    <van-empty description="暂无商品说明" />
   </view>
 
   <view class="common-problem">

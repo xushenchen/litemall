@@ -25,10 +25,11 @@ Page({
 
   // 页面分享
   onShareAppMessage: function() {
+    const app = getApp()
     let that = this;
     return {
       title: '邀请团购',
-      desc: '唯爱与美食不可辜负',
+      desc: app.globalData.appDesc || '',
       path: '/pages/index/index?grouponId=' + this.data.id
     }
   },

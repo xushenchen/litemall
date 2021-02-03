@@ -9,15 +9,19 @@ page {
   height: auto;
   overflow: hidden;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-info {
+  width: 100%;
   background-image: linear-gradient(to bottom, #e1251b 0%, #ff6b46 100%);
   /* background-color: #ab956d; */
   color: #f4f4f4;
   display: flex;
   align-items: center;
-  padding: 30rpx;
+  padding: 30rpx 30rpx 95rpx 30rpx;
   font-size: 28rpx;
 }
 
@@ -53,11 +57,14 @@ page {
 
 .user_area {
   /* border: 1px solid black; */
-  width: 100%;
+  width: 94%;
   height: 226rpx;
   /* margin: 0 auto; */
   margin-top: -8rpx;
   background: #fff;
+  position: relative;
+  top: -65rpx;
+  border-radius: 15rpx;
   /* border-top: 1px solid #f4f4f4; */
 }
 
@@ -90,12 +97,22 @@ page {
   margin-right: 30rpx;
 }
 
+.container-bottom {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -45rpx;
+}
+
 .user_column {
   /* border: 1px solid black; */
   height: 140rpx;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15rpx;
 }
 
 .user_column_item {
@@ -163,4 +180,9 @@ page {
   background: #fff;
   color: red;
   font-size: 30rpx;
+}
+
+.user-help-list-view {
+  margin-top: 20rpx;
+  border-radius: 15rpx;
 }

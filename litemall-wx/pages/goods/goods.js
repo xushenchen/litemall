@@ -32,6 +32,24 @@ Page({
     isGroupon: false, //标识是否是一个参团购买
     soldout: false,
     canWrite: false, //用户是否获取了保存相册的权限
+    shareOptions: [
+      { name: '微信', icon: 'wechat', openType: 'share' },
+      // { name: '微博', icon: 'weibo' },
+      // { name: '复制链接', icon: 'link' },
+      { name: '生成海报', icon: 'poster' },
+      // { name: '二维码', icon: 'qrcode' },
+    ],
+  },
+
+  onBottomClose() {
+    this.setData({ openShare: false });
+  },
+  
+  onBottomSelect(event) {
+    if (event.detail.name === '生成海报') {
+      this.saveShare()
+    }
+    this.onBottomClose();
   },
 
   // 页面分享
@@ -39,7 +57,7 @@ Page({
     let that = this;
     return {
       title: that.data.goods.name,
-      desc: '唯爱与美食不可辜负',
+      desc: app.globalData.appDesc || '',
       path: '/pages/index/index?goodId=' + this.data.id
     }
   },

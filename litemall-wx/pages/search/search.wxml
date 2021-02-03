@@ -59,8 +59,9 @@
       </view>
     </view>
   </view>
+  <van-empty image="search" description="{{ !goodsList.length && searchStatus ? '您寻找的商品还未上架' : '请输入需要的商品名称'}}" wx:if="{{!searchStatus || !goodsList.length}}" />
 
-  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+  <!-- <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
     <text class="text">您寻找的商品还未上架</text>
-  </view>
+  </view> -->
 </scroll-view>

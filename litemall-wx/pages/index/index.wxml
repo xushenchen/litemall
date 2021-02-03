@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  <van-notice-bar wx:if="{{false}}" mode="link" text="技术是开发它的人的共同灵魂。" speed="28"/>
 <view class="search">
     <navigator url="/pages/search/search" class="input">
       <van-icon name="search"/>
