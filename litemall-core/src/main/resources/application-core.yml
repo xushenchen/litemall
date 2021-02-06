@@ -50,7 +50,7 @@ litemall:
   express:
     enable: false
     appId: "XXXXXXXXX"
-    appKey: "XXXXXXXXXXXXXXXXXXXXXXXXX"
+    appKey: "2f099e38-5be7-4943-b4a2-ceffd9e90544"
     vendors:
     - code: "ZTO"
       name: "中通快递"

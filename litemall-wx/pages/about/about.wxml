@@ -1,13 +1,13 @@
 <view class="container">
 
-  <view class="label">项目名称:</view>
+  <view class="label">公司名称:</view>
   <view class="about-item">
     <view class="item-left">
       <text>{{name}}</text> 
     </view>
   </view>
 
-  <view class="label">项目地址:</view>
+  <view class="label">公司地址:</view>
   <view class="about-item">
     <view class="item-left">
       <text>{{address}}</text> 
@@ -17,7 +17,7 @@
     </view>
   </view>
 
-  <view class="label">电话号码:</view>
+  <view class="label">联系电话:</view>
   <view class="about-item">
     <view class="item-left">
       <text>{{phone}}</text> 

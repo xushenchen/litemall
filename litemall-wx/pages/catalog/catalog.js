@@ -39,6 +39,7 @@ Page({
     }).catch(err => {
       wx.hideLoading(); // 失败了也关闭提示
       wx.showToast({
+        icon: 'error',
         title: '加载分类失败',
       })
     });

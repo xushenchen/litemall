@@ -53,5 +53,6 @@ App({
   },
   globalData: {
     hasLogin: false,
+    appDesc: '鑫奥鹏官方商城'
   }
 })

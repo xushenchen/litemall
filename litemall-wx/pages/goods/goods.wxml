@@ -1,10 +1,12 @@
 <view class="container">
   <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item>
-      <image src="{{goods.picUrl}}" background-size="cover"></image>
+      <!-- <image src="{{goods.picUrl}}" background-size="cover"></image> -->
+      <van-image style="width:100%;height:100%;" src="{{goods.picUrl}}" fit="contain"/>
     </swiper-item>
     <swiper-item wx:for="{{goods.gallery}}" wx:key="*this">
-      <image src="{{item}}" background-size="cover"></image>
+      <!-- <image src="{{item}}" background-size="cover"></image> -->
+      <van-image style="width:100%;height:100%;" src="{{item}}" fit="contain"/>
     </swiper-item>
   </swiper>
   <!-- 分享 -->
